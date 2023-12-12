@@ -328,7 +328,7 @@ def attach(app, conf):
     evolver_conf = conf
 
     # Set up the serial comms
-    #serial_connection = serial.Serial(port=evolver_conf['serial_port'], baudrate = evolver_conf['serial_baudrate'], timeout = evolver_conf['serial_timeout'])
+    # serial_connection = serial.Serial(port=evolver_conf['serial_port'], baudrate = evolver_conf['serial_baudrate'], timeout = evolver_conf['serial_timeout'])
 
 def get_num_commands():
     global command_queue
@@ -371,7 +371,7 @@ async def broadcast(commands_in_queue):
     # Always run commands so that IMMEDIATE requests occur. RECURRING requests only happen if no commands in queue
     # broadcast_data['data'] = await run_commands()
     # replace data with dummy data
-    broadcast_data['data'] = {'data': {'od_135': ['4095', '4095', '4095', '4095', '402', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '406', '4095', '4095', '4095'], 'od_90': ['45294', '45491', '41809', '48285', '44203', '56908', '45052', '50669', '50110', '49631', '48796', '52508', '50900', '43329', '45269', '55678'], 'temp': ['1949', '1982', '1974', '1951', '1967', '1944', '2137', '1969', '1950', '1958', '1952', '1951', '1972', '1984', '1962', '1958']}, 'config': {'lxml': {'fields_expected_incoming': 17, 'fields_expected_outgoing': 17, 'recurring': False, 'value': ['4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095']}, 'od_135': {'fields_expected_incoming': 17, 'fields_expected_outgoing': 2, 'recurring': True, 'value': '1000'}, 'od_90': {'fields_expected_incoming': 17, 'fields_expected_outgoing': 2, 'post': [{'param': 'stir', 'value': 'values'}], 'pre': [{'param': 'stir', 'value': ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']}, {'param': 'wait', 'value': 15}], 'recurring': True, 'value': '1000'}, 'od_led': {'fields_expected_incoming': 17, 'fields_expected_outgoing': 17, 'recurring': True, 'value': ['4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '4095']}, 'pump': {'fields_expected_incoming': 49, 'fields_expected_outgoing': 49, 'recurring': False, 'value': ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']}, 'stir': {'fields_expected_incoming': 17, 'fields_expected_outgoing': 17, 'recurring': True, 'value': [0, 0, 0, 0, 4, 4, 4, 4, 8, 8, 8, 8, 4, 4, 4, 4]}, 'temp': {'fields_expected_incoming': 17, 'fields_expected_outgoing': 17, 'recurring': True, 'value': ['1873', '1868', '1874', '1873', '1882', '1878', '1880', '1882', '1874', '1872', '1881', '1883', '1880', '1880', '1880', '1880']}}, 'ip': '192.168.1.2', 'timestamp': 1690949986.3408217}
+    broadcast_data['data'] = {'od_135': ['4095', '4095', '4095', '4095', '402', '4095', '4095', '4095', '4095', '4095', '4095', '4095', '406', '4095', '4095', '4095'], 'od_90': ['45294', '45491', '41809', '48285', '44203', '56908', '45052', '50669', '50110', '49631', '48796', '52508', '50900', '43329', '45269', '55678'], 'temp': ['1949', '1982', '1974', '1951', '1967', '1944', '2137', '1969', '1950', '1958', '1952', '1951', '1972', '1984', '1962', '1958']}
 
     broadcast_data['config'] = evolver_conf['experimental_params']
     if not commands_in_queue:
