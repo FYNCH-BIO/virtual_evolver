@@ -22,7 +22,7 @@ if __name__ == '__main__':
     evolver_ip = s.getsockname()[0]
     s.close()
     with open(os.path.realpath(os.path.join(os.getcwd(),os.path.dirname(__file__), CONF_FILENAME)), 'r') as ymlfile:
-        conf = yaml.load(ymlfile)
+        conf = yaml.safe_load(ymlfile)
 
     conf['evolver_ip'] = evolver_ip
 
